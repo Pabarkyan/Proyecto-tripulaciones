@@ -1,21 +1,18 @@
 ,compania,nombre_tarifa,tipo_tarifa,potencia_contratada,precio_€/kWh,precio_llano,precio_punta,precio_valle,permanencia
-0,Repsol,Ahorro Plus,fija,3.95,0.119746,0.068219,0.068219,0.068219,No
-1,Repsol,Plana de Luz,fija,≤15,,,,,Sí
+0,Repsol,Ahorro Plus,fija,≤10,0.119746,0.068219,0.068219,0.068219,No
 2,Repsol,Mis 10h con Descuento,fija,≤15,0.068219,0.068219,0.068219,0.068219,Sí
 3,Repsol,2ª Residencia,fija,≤15,0.054521,0.054521,0.054521,0.054521,Sí
 4,Repsol,Mis 3 Horas Gratis,fija,≤15,0.068219,0.068219,0.068219,0.068219,Sí
 5,Repsol,Domingos Gratis,fija,≤15,0.068219,0.068219,0.068219,0.068219,Sí
 6,Repsol,Descuento Mañana y Tarde,fija,≤15,0.068219,0.068219,0.068219,0.068219,Sí
 7,Repsol,Descuento Día,fija,≤15,0.068219,0.068219,0.068219,0.068219,Sí
-8,Repsol,Discriminación Horaria,variable,4.47,0.119583,0.13863,0.188553,0.119583,Sí
+8,Repsol,Discriminación Horaria,variable,≤10,0.119583,0.13863,0.188553,0.119583,Sí
 9,Repsol,Teletrabajo,variable,≤15,0.068219,0.068219,0.068219,0.068219,Sí
 10,TotalEnergies,A Tu Aire Luz Siempre,fija,≤15,0.104995,0.104995,0.104995,0.104995,No
 11,TotalEnergies,Plan Ahora,fija,≤15,0.03,0.03,0.03,0.03,No
 12,TotalEnergies,Programa Tu Ahorro,variable,≤15,0.084089,0.101222,0.144162,0.084089,No
-13,HolaLuz,La Tarifa Justa,fija,≤15,,,,,No
 14,HolaLuz,La Tarifa Clasica,fija,≤10,0.139,0.139,0.139,0.139,No
 15,HolaLuz,La Tarifa 3,variable,≤10,0.105,0.154,0.199,0.105,No
-16,HolaLuz,Tarifa Mercado,fija,≤10,0.122,0.122,0.122,0.122,
 17,edp,Plan Solar Duo,variable,≤10,0.07,0.183,0.183,0.105,Sí
 18,edp,Plan Solar Duo,variable,Entre 10 y 15,0.07,0.157,0.157,0.105,Sí
 19,edp,Plan Ahorro Solar,variable,≤10,0.08,0.145,0.183,0.125,Sí
@@ -25,7 +22,6 @@
 23,Pon Preu,Plan Hagámoslo fácil,fija,≤15,0.1328,0.1328,0.1328,0.1328,No
 24,Pon Preu,Plan Noche y Día,variable,≤10,0.99999,0.12997,0.189802,0.099999,No
 25,Pon Preu,Plan Noche y Día,variable,Entre 10 y 15,0.1,0.13,0.19,0.1,No
-26,Pon Preu,Plan Dinámico,fija,≤15,0.009,,,,No
 27,Pon Preu,Plan Fin de Semana,variable,≤10,0.119999,0.16997,0.249802,0.119999,No
 28,Pon Preu,Plan Fin de Semana,variable,Entre 10 y 15,0.120042,0.169997,0.120042,0.249857,No
 29,Pon Preu,Plan Fin de Semana,variable,≤10,0.163999,0.229999,0.269999,0.163999,No
@@ -37,21 +33,11 @@
 35,Iberdrola,Plan Estable Verde,fija,≤10,0.155,0.155,0.155,0.155,No
 36,Iberdrola,Plan Estable,fija,≤10,0.135,0.135,0.135,0.135,No
 37,Iberdrola,Plan Estable,fija,Entre 10 y 15,0.155,0.155,0.155,0.155,No
-38,Iberdrola,Plan Elige 8 Horas,variable,≤15,0.241,,0.241,0.0967,No
-39,Iberdrola,Plan Noche y Día,variable,≤15,0.239,,0.239,0.109,No
-40,Iberdrola,Plan Familias,variable,≤15,0.189,,0.189,0.103,No
-41,Iberdrola,Plan Verano,variable,≤15,0.219,,0.219,0.099,No
-42,Iberdrola,Plan Invierno,variable,≤15,0.225,,0.225,0.096,No
 43,Iberdrola,Plan 3 Periodos,variable,≤15,0.08366,0.113646,0.160971,0.08366,No
-44,Iberdrola,Plan Solar,variable,≤15,0.2032,,0.1016,0.2032,No
 45,Iberdrola,Tarifa 3.0TD-Plan Estable,fija,>15,0.1376,0.1376,0.1376,0.1376,Sí
-46,Iberdrola,Tarifa 3.0TD-Plan Noche,variable,>15,0.1976,,0.1976,0.0688,Sí
-47,Iberdrola,Tarifa 3.0TD-Plan Comercio,variable,>15,0.1976,,0.1976,0.092,Sí
-48,Iberdrola,Plan Ahorro Inteligente,variable,≤15,0.168225,,0.168225,0.0999,No
 49,Lucera,Precio coste,variable,≤15,0.072,0.102,0.151,0.072,No
 50,Lucera,Precio fijo,fija,≤15,0.1516,0.1516,0.1516,0.1516,No
 51,Naturgy,Por Uso Luz,fija,≤15,0.1149,0.1149,0.1149,0.1149,No
-52,Naturgy,Plana Luz,variable,≤15,,,,,No
 53,Naturgy,Noche Luz,variable,≤15,0.0821,0.1162,0.17,0.0821,No
 54,Acciona Energía,Tarifa Única,fija,≤15,0.12409,0.12409,0.12409,0.12409,No
 55,Acciona Energía,Tarifa Variable,variable,≤15,0.1037,0.1037,0.1037,0.1037,No
