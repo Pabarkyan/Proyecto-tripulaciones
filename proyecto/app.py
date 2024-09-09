@@ -7,7 +7,7 @@ app.secret_key = 'supersecretkey'  # Necesaria para manejar sesiones
 # Ruta Home básica
 @app.route('/')
 def home():
-    return 'Bienvenido a AbarataLuz'
+    return 'Bienvenido a CholloLuz'
 
 # Ruta 'information' que acepta parámetros a través de la URL (GET)
 @app.route('/information')
