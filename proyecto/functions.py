@@ -124,7 +124,13 @@ def filter_data(user_info: pd.DataFrame) -> pd.DataFrame:
     user_permanencia = int(user_info['permanencia'].iloc[0])
     datos_filtrados = datos_convertidos[(datos_convertidos['precio_€/kWh'] < user_price) & (datos_convertidos['permanencia'] == user_permanencia)]
 
-    return datos_filtrados
+    # Hacemos unos cambios para que el json se vea bien y ordenamos por precio
+    datos_filtrados = datos_filtrados.copy()
+    datos_filtrados.rename(columns={'precio_€/kWh': 'precio_euro/kWh'}, inplace=True)
+    datos_filtrados.loc[:, 'potencia_contratada'] = datos_filtrados['potencia_contratada'].apply(transformar_valores)
+    df_sorted = datos_filtrados.sort_values(by='precio_euro/kWh', ascending=True)
+
+    return df_sorted
 
 
 # El dataframe que pasamos como parametro tiene que ser de una forma especifica, en caso contrario no funcionara
@@ -152,8 +158,43 @@ def user_friendly_data(data: pd.DataFrame) -> pd.DataFrame:
 
     return data
 
+def transformar_valores(valor: str) -> str: # para que el json lo interprete bien
+    if valor == '≤10':
+        return 'menor o igual a 10'
+    elif valor == '≤15':
+        return '15'
+    else:
+        return valor
+    
 
-# user_variable = user_information(0.119746, 'variable', 12, 1)
-# user_fixed = user_information(0.119746, 'fija', 12, 0)
-# cluster = cluster_clasification(user_fixed)
-# print(filter_data(cluster, user_variable))
+# Manejo de errores en la obtencion de parametros en la url
+def validar_parametros(permanencia, precio, tipo_tarifa, potencia):
+    errores = []
+
+    # Validar permanencia: solo puede ser 0 o 1
+    permanencia = str(permanencia)
+    if permanencia not in ['0', '1']:
+        errores.append("El parámetro 'permanencia' debe ser '0' o '1'.")
+
+    # Validar precio: debe ser un float entre 0 y 1 (excluyendo 0 y 1)
+    try:
+        precio_float = float(precio)
+        if not (0 < precio_float < 1):
+            errores.append("El parámetro 'precio' debe ser un número entre 0 y 1, sin incluir los extremos.")
+    except ValueError:
+        errores.append("El parámetro 'precio' debe ser un número válido.")
+
+    # Validar tipo_tarifa: solo puede ser 'fija' o 'variable', sin importar mayúsculas o minúsculas
+    if tipo_tarifa.lower() not in ['fija', 'variable']:
+        errores.append("El parámetro 'tipo_tarifa' debe ser 'fija' o 'variable'.")
+
+    # Validar potencia: debe ser un número entre 1 y 20 (incluyendo ambos extremos)
+    try:
+        potencia_float = float(potencia)
+        if not (1 <= potencia_float <= 20):
+            errores.append("El parámetro 'potencia' debe ser un número entre 1 y 20, incluidos ambos extremos.")
+    except ValueError:
+        errores.append("El parámetro 'potencia' debe ser un número válido.")
+
+    # Devolver errores concatenados si existen, o una cadena vacía si no hay errores
+    return ' '.join(errores) if errores else ''

@@ -26,6 +26,25 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 
 `pip install -r requirements.txt`
 
+## 3. Ejecutar la API
+
 `cd proyecto`
 
 `python app.py`
+
+
+## Authors (github usernames):
+    🐙 Pabarkyan
+    🐙 earribasds
+    🐙 sharkinvestor 
+    🐙 ShirleiO 
+
+### Valores de la url 'information':
+
+_Ejemplo: information?permanencia=1&precio=0.23&tipo_tarifa=fija&potencia=14_
+
+##### Condiciones:
+    - Permanencia: solo puede tomar el valor 0 o 1
+    - precio: valores entre 0 y 1 sin incluir
+    - tipo_tarifa: 'fija' o 'variable' (no es sensible a mayusculas)
+    - potencia: valores entre 1 y 20, ambos inclusive
